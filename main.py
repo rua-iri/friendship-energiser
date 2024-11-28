@@ -1,24 +1,8 @@
-
-from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
-from dotenv import load_dotenv
-from os import getenv
-
-from friendship_energiser.message_handlers import hello_func
-
-load_dotenv()
-TELEGRAM_TOKEN = getenv("API_TOKEN")
+from friendship_energiser.bot import run_bot
 
 
 def main():
-    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
-
-    # add handler(s) to bot
-    app.add_handler(
-        CommandHandler("hello", hello_func)
-    )
-
-    app.run_polling()
+    run_bot()
 
 
 if __name__ == "__main__":
