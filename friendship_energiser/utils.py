@@ -22,6 +22,3 @@ def init_logs() -> None:
         filemode='a',
         format=LOGGING_FORMAT
     )
-
-
-

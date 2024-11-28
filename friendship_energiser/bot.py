@@ -16,15 +16,19 @@ load_dotenv()
 
 
 def run_bot() -> None:
-    TELEGRAM_TOKEN = getenv("API_TOKEN")
-    app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
+    try:
+        TELEGRAM_TOKEN = getenv("API_TOKEN")
+        app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
-    # add handler(s) to bot
-    app.add_handler(
-        CommandHandler(
-            "hello",
-            hello_func
+        # add handler(s) to bot
+        app.add_handler(
+            CommandHandler(
+                "hello",
+                hello_func
+            )
         )
-    )
 
-    app.run_polling()
+        app.run_polling()
+
+    except Exception as e:
+        logger.error(e)
