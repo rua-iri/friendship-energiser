@@ -1,1 +1,1 @@
-# friendship-vitaliser
+# Friendship-Vitaliser
