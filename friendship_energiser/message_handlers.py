@@ -6,4 +6,6 @@ async def hello_func(
         update: Update,
         context: ContextTypes.DEFAULT_TYPE
 ) -> None:
-    await update.message.reply_text(f"Hey, {update.effective_user.first_name}")
+    await update.message.reply_text(
+        f"Hey, {update.effective_user.first_name}"
+    )
