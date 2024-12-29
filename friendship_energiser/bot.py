@@ -20,6 +20,8 @@ def run_bot() -> None:
         TELEGRAM_TOKEN = getenv("API_TOKEN")
         app = ApplicationBuilder().token(TELEGRAM_TOKEN).build()
 
+        print("App started")
+
         # add handler(s) to bot
         app.add_handler(
             CommandHandler(
